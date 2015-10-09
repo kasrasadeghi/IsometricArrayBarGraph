@@ -25,7 +25,10 @@ public class ColumnMajorFill extends IABGModel
     @Override
     void fillBoard(int[][] board) 
     {
-        
+        int counter = 1;
+        for (int j = 0; j < board[1].length; j++) 
+            for (int i = 0; i < board.length; i++) 
+                board[i][j] = counter++;
     }
     
 }
