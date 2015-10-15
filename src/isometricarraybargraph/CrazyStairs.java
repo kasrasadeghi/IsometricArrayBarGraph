@@ -62,9 +62,10 @@ public class CrazyStairs extends IABGModel
             board[l/2 - i][i + 2*n - 2] = counter;
             board[l/2 + i][i + 2*n - 2] = counter;
         }
+        counter++;
         for (int i = n - 2; i > -1; i--) {
-            board[l/2 + i][-i + 3*n + 1] = counter;
-            board[l/2 - i][-i + 3*n + 1] = counter++;
+            board[l/2 + i][l - 1 - i] = counter;
+            board[l/2 - i][l - 1 - i] = counter++;
         }
     }
     

@@ -29,7 +29,7 @@ public class SinGraph extends IABGModel
     {
         for (int i = 0; i < board.length; i++) 
             for (int j = 0; j < board[i].length; j++) {
-                board[i][j] = (int)(Math.sin(t + (board.length - i)/40 * (board.length - j)/40) * 100 ) + 400;
+                board[i][j] = (int)(Math.sin(t/5 + (i*2 + j*2)%20) * 100 ) + 400;
             }
         board[board.length - 1][board.length - 1] = 400;
     }
