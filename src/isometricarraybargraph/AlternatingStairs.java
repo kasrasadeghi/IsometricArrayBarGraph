@@ -28,7 +28,10 @@ public class AlternatingStairs extends IABGModel
     @Override
     void fillBoard(int[][] board) 
     {
-       
+        for ( int i = 0; i < board.length; i++) 
+            for ( int j = 0; j < board[i].length; j++) {
+                board[i][j] = (i%2 == 0) ? board[i].length - j : j + 1;
+            }
         
     }
     

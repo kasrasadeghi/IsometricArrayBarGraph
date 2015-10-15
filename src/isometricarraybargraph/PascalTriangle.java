@@ -25,7 +25,11 @@ public class PascalTriangle extends IABGModel
     // 1  4  10 20 
     @Override
     void fillBoard(int[][] board) {
-        
+        for (int i = 0; i < board.length; i++)
+            for (int j = 0; j < board[i].length; j++) {
+                board[i][j] = (j == 0 || i == 0) ? 1 :
+                        board[i-1][j] + board[i][j-1];
+            }
     }
     
 }

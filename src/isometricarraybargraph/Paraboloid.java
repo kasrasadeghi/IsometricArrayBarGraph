@@ -21,7 +21,11 @@ public class Paraboloid extends IABGModel
     // vertex at the center of the row/column
     @Override
     void fillBoard(int[][] board) {
-        
+        for (int i = 0; i< board.length; i++) 
+            for (int j = 0; j < board[i].length; j++) {
+                board[i][j] = (i - board.length/2) * (i - board.length/2)
+                        + (j - board[i].length/2) * (j - board[i].length/2);
+            }
     }
     
 }

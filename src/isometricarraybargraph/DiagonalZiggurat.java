@@ -17,18 +17,22 @@ public class DiagonalZiggurat extends IABGModel
         super(numRows, numColumns);
     }
 
-    // Example for a board which is 8x10:
+    // Example for a board which is 9x10:
     // 1  3  3  5  5  7  7  9  9  11
     // 3  3  5  5  7  7  9  9  11 11
     // 3  5  5  7  7  9  9  11 11 13
     // 5  5  7  7  9  9  11 11 13 13
     // 5  7  7  9  9  11 11 13 13 15
     // 7  7  9  9  11 11 13 13 15 15
+    // 7  9  9  11 11 13 13 15 15 17
     // 9  9  11 11 13 13 15 15 17 17
-    // 9 11  11 13 13 15 15 17 17 19
+    // 9  11 11 13 13 15 15 17 17 19
     @Override
     void fillBoard(int[][] board) {
-       
+        for (int i = 0; i < board.length; i++) 
+            for (int j = 0; j < board[i].length; j++) {
+                board[i][j] = (i + j)/2 * 2 + 1;
+            }
     }
     
 }

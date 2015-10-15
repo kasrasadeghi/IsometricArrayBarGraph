@@ -26,7 +26,18 @@ public class Ziggurat extends IABGModel
     @Override
     void fillBoard(int[][] board) 
     {
-        
+        for (int i = 0; i < board.length; i++) 
+            for (int j = 0; j < board[i].length; j++) {
+                int top = i + 1;
+                int bottom = board.length - i;
+                int left = j + 1;
+                int right = board[i].length - j;
+                board[i][j] = 
+                        (top < bottom && top < left && top < right) ?   top 
+                        : (bottom < left && bottom < right) ?           bottom 
+                        : (left < right) ?                              left 
+                        :                                               right;
+            }
     }
     
 }

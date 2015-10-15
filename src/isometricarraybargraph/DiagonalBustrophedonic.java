@@ -24,7 +24,18 @@ public class DiagonalBustrophedonic extends IABGModel
     // 4  9  10 14 15
     protected void fillBoard( int [][] board )
     {
-        
+        int [][] movement = new int [board.length][board[0].length]; 
+        // 1 is right
+        // 2 is downleft
+        // 3 is down
+        // 4 is upright
+        int counter = 1;
+        for (int r = 0; r < board.length; r++) {
+            for(int c = 0; c < board[r].length; c++) {
+                if (r == 0 && c < board[r].length /2 * 2)
+                    board[r][c] = (c % 2 == 0) ? 1:2;
+                else if ()
+            }
+        }
     }
-    
 }

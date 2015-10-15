@@ -41,7 +41,31 @@ public class CrazyStairs extends IABGModel
     @Override
     void fillBoard(int[][] board) 
     {
-        
+        int l = board.length;
+        int n = (l + 3)/4;
+        int counter = n;
+        for (int i = 0; i < n; i++) {
+            board[l/2 - i][i] = counter;
+            board[l/2 + i][i] = counter--;
+        }
+        counter++; counter++;
+        for (int i = 0; i < n - 1; i++) {
+            board[l/2 - n - i][i + n] = counter;
+            board[l/2 - n + i + 2][i + n] = counter;
+            board[l/2 + n - i - 2][i + n] = counter;
+            board[l/2 + n + i][i + n] = counter++;
+        }
+        counter--;
+        for (int i = 1; i < n; i++) {
+            board[i][i + 2*n - 2] = --counter;
+            board[l - 1 - i][i + 2*n - 2] = counter;
+            board[l/2 - i][i + 2*n - 2] = counter;
+            board[l/2 + i][i + 2*n - 2] = counter;
+        }
+        for (int i = n - 2; i > -1; i--) {
+            board[l/2 + i][-i + 3*n + 1] = counter;
+            board[l/2 - i][-i + 3*n + 1] = counter++;
+        }
     }
     
 }
