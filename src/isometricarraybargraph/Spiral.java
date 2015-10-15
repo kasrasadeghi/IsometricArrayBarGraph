@@ -27,7 +27,72 @@ public class Spiral extends IABGModel
     @Override
     protected void fillBoard(int[][] board) 
     {
+        int counter = 1;
+        int rn = board.length;      //row number
+        int cn = board[0].length;   //column number
         
+        int r = 0;
+        int c = 0;
+        int dr = 0;
+        int dc = 1;
+        
+        while (counter < rn * cn + 1 ) {
+            board[r][c] = counter++;
+            
+            //if we hit the right edge or some numbers on the right
+            // and we're travelling right head down
+            if ( dr == 0 && dc == 1) {
+                if( c == cn-1) {
+                    dr++;
+                    dc--;
+                }
+                else if ( board[r][c+1] != 0) {
+                    dr++;
+                    dc--;
+                }
+            }
+            
+            //if we hit the bottom edge or some numbers on the bottom 
+            // and we're travelling down head left
+            if ( dr == 1 && dc == 0) {
+                if( r == rn-1) {
+                    dr--;
+                    dc--;
+                }
+                else if ( board[r+1][c] != 0) {
+                    dr--;
+                    dc--;
+                }
+            }
+            
+            //if we hit the left edge or some numbers on the left 
+            // and we're travelling left head up
+            if ( dr == 0 && dc == -1) {
+                if( c == 0) {
+                    dr++;
+                    dc--;
+                }
+                else if ( board[r][c-1] != 0) {
+                    dr++;
+                    dc--;
+                }
+            }
+            
+            //if we hit some numbers on the top and we're heading up
+            // head right
+            if ( dr == -1 && dc == 0) {
+                if( r == 0) {
+                    dr++;
+                    dc--;
+                }
+                else if ( board[r-1][c] != 0) {
+                    dr++;
+                    dc--;
+                }
+            }
+            
+            r += dr;
+            c += dc;
+        }
     }
-    
 }

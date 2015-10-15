@@ -55,9 +55,9 @@ public class IsometricArrayBarGraph {
 //        launch( "DiagonalZiggurat", new DiagonalZiggurat( 8, 8 ) );
 //        launch( "Sin Graph", new SinGraphControl(), new SinGraphView(), new SinGraph( 50, 50 ) );
 //        launch( "Paraboloid", new Paraboloid( 17 ) );
-//        launch( "CrazyStairs", new CrazyStairs(8) );
-        launch( "DB", new DiagonalBustrophedonic(3, 4) );
-//        launch( "Spiral", new Spiral( 9, 9 ) );
+//        launch( "CrazyStairs", new CrazyStairs(20) );
+//        launch( "DB", new DiagonalBustrophedonic(5, 10) );
+        launch( "Spiral", new Spiral( 9, 9 ) );
     }
     
 }
