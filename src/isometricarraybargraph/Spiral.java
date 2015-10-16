@@ -41,6 +41,7 @@ public class Spiral extends IABGModel
             
             //if we hit the right edge or some numbers on the right
             // and we're travelling right head down
+            // from 0 1 to 1 0
             if ( dr == 0 && dc == 1) {
                 if( c == cn-1) {
                     dr++;
@@ -54,6 +55,7 @@ public class Spiral extends IABGModel
             
             //if we hit the bottom edge or some numbers on the bottom 
             // and we're travelling down head left
+            // from 1 0 to 0 -1
             if ( dr == 1 && dc == 0) {
                 if( r == rn-1) {
                     dr--;
@@ -67,27 +69,29 @@ public class Spiral extends IABGModel
             
             //if we hit the left edge or some numbers on the left 
             // and we're travelling left head up
+            // from 0 -1 to -1 0
             if ( dr == 0 && dc == -1) {
                 if( c == 0) {
-                    dr++;
-                    dc--;
+                    dr--;
+                    dc++;
                 }
                 else if ( board[r][c-1] != 0) {
-                    dr++;
-                    dc--;
+                    dr--;
+                    dc++;
                 }
             }
             
             //if we hit some numbers on the top and we're heading up
             // head right
+            // from -1 0 to 0 1
             if ( dr == -1 && dc == 0) {
                 if( r == 0) {
                     dr++;
-                    dc--;
+                    dc++;
                 }
                 else if ( board[r-1][c] != 0) {
                     dr++;
-                    dc--;
+                    dc++;
                 }
             }
             

@@ -57,7 +57,7 @@ public class IsometricArrayBarGraph {
 //        launch( "Paraboloid", new Paraboloid( 17 ) );
 //        launch( "CrazyStairs", new CrazyStairs(20) );
 //        launch( "DB", new DiagonalBustrophedonic(5, 10) );
-        launch( "Spiral", new Spiral( 9, 9 ) );
+//        launch( "Spiral", new Spiral( 9, 9 ) );
     }
     
 }
